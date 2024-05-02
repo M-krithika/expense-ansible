@@ -53,8 +53,10 @@
       - cryptography
       executable: pip3.9 
 
-  - name: import data intlo mysql
+  - name: import data into mysql
     community.mysql.mysql_db:
       login_host: "{{login_host}}"
-      login_password: "{{mysql_root_password}}"
+      login_password: "{{login_password}}"
       login_user: root
+      target: /app/schema/backend.sql
+      state: dump
