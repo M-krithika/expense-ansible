@@ -12,5 +12,9 @@
       name: nginx
       state: started
       enabled: true
-
+  
+  - name: delete default file
+    ansible.builtin.file:
+      path: /usr/share/nginx/html/*
+      state: absent
   
